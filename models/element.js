@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-// import mongoose from 'mongoose'
 
 const elementSchema = new mongoose.Schema({
   id: Number,
@@ -21,10 +20,4 @@ const elementSchema = new mongoose.Schema({
 // for loop to iterate over array and create elements
 
 
-
-
-
-// const Element = mongoose.model('Element', elementSchema)
-
 module.exports = mongoose.model("Element", elementSchema);
-// export default Element
