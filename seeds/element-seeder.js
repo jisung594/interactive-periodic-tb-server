@@ -3,7 +3,8 @@ let Element = require('../models/element.js')
 let mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost:27017/periodic-table')
-console.log(PeriodicTable["elements"][1])
+let db = mongoose.connection
+db.collection('elements').remove({})
 
 let elementsData = PeriodicTable
 let counter = 1
