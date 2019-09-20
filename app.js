@@ -16,8 +16,8 @@ var app = express();
 
 // ***** mongod ******
 // PORT NUMBER: 27017
-// mongoose.connect('mongolab-trapezoidal-06998')
-mongoose.connect('mongodb://localhost:27017/periodic-table')
+// mongoose.connect('mongodb://jisung594@gmail.com:Korea123$@ds263948.mlab.com:63948/heroku_g4lhn8jc')
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/periodic-table')
 
 let db = mongoose.connection
 
