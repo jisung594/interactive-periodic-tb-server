@@ -32,7 +32,7 @@ router.get('/api/elements', (req,res) => {
   db.collection('elements').find({}, function(err, data){
     // console.log("Getting data from db")
     // console.log(data)
-    res.json(data)
+    res.send(data)
   })
 
   // elementsData.find((err, data) => {
