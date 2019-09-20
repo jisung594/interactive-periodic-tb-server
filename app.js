@@ -26,7 +26,7 @@ router.get('/api/elements', (req,res) => {
   console.log("I received a GET request");
 
   Element.find({})
-    .then(data => res.json(data))
+    .then(data => res.send(data))
     // .then(data => res.json(data))
 
   // db.collection('elements').find({}, function(err, data){
