@@ -27,8 +27,8 @@ var app = express();
 
 // ***** mongod ******
 // PORT NUMBER: 27017
-mongoose.connect('http://interactive-periodic-tb-server.herokuapp.com')
-// mongoose.connect('mongodb://localhost:27017/periodic-table')
+mongoose.connect('http://interactive-periodic-tb-server.herokuapp.com/periodic-table')
+mongoose.connect('mongodb://localhost:27017/periodic-table')
 
 let db = mongoose.connection
 
