@@ -22,7 +22,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/periodic-
 let db = mongoose.connection
 
 
-router.get('/api/elements', (req,res) => {
+app.get('/api/elements', (req,res) => {
   console.log("I received a GET request");
 
   // Element.find({})
