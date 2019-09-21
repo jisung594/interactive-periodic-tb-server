@@ -33,7 +33,7 @@ app.use(bodyParser.json());
 
 // ***** mongod ******
 // PORT NUMBER: 27017
-mongoose.connect(process.env.MONGODB_URI)
+app.db = mongoose.connect(process.env.MONGODB_URI)
 
 // let db = mongoose.connection
 
