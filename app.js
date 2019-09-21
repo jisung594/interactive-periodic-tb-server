@@ -33,7 +33,7 @@ var app = express();
 
 // ***** mongod ******
 // PORT NUMBER: 27017
-mongoose.connect(process.env.MONGODB_URI  || 'mongodb://localhost:27017/periodic-table')
+app.db = mongoose.connect(process.env.MONGODB_URI  || 'mongodb://localhost:27017/periodic-table')
 // mongoose.connect(process.env.MONGOLAB_URI  || 'mongodb://localhost:27017/periodic-table')
 
 // let db = mongoose.connection
