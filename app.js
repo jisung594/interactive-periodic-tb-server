@@ -11,7 +11,7 @@ let elementsData = require('./PeriodicTableJSON.json')
 
 // // --------------
 // var db;
-// var mongodb = require('mongodb');
+var mongodb = require('mongodb');
 // var MongoClient = mongodb.MongoClient;
 //
 // mongodb.MongoClient.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/periodic-table', function (err, client) {
