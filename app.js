@@ -14,7 +14,7 @@ var db;
 var mongodb = require('mongodb');
 var MongoClient = mongodb.MongoClient;
 
-mongodb.MongoClient.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/periodic-table', function (err, client) {
+mongodb.MongoClient.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017/periodic-table', function (err, client) {
   if (err) {
     console.log(err);
     process.exit(1);
@@ -70,7 +70,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // app.use('/', routes);
 // app.use('/users', usersRouter);
-app.get('/api/elements', require('./routes/api/elements'));
+app.use('/api/elements', require('./routes/api/elements'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
