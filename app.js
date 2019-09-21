@@ -9,6 +9,20 @@ let elementsData = require('./PeriodicTableJSON.json')
 var bodyParser = require("body-parser");
 require('dotenv').config()
 
+// --------------
+var db;
+var mongodb = require('mongodb');
+var MongoClient = mongodb.MongoClient;
+
+mongodb.MongoClient.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/periodic-table', function (err, client) {
+  if (err) {
+    console.log(err);
+    process.exit(1);
+  }
+
+  db = client.db();
+// --------------
+
 
 
 var routes = require('./routes/index');
@@ -21,8 +35,7 @@ app.use(bodyParser.json());
 // PORT NUMBER: 27017
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/periodic-table')
 
-let db = mongoose.connection
-
+// let db = mongoose.connection
 
 // router.get('/api/elements', (req,res) => {
 //   console.log("I received a GET request");
