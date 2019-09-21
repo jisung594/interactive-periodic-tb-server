@@ -9,19 +9,19 @@ let elementsData = require('./PeriodicTableJSON.json')
 var bodyParser = require("body-parser");
 require('dotenv').config()
 
-// --------------
-var db;
-var mongodb = require('mongodb');
-var MongoClient = mongodb.MongoClient;
-
-mongodb.MongoClient.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017/periodic-table', function (err, client) {
-  if (err) {
-    console.log(err);
-    process.exit(1);
-  }
-
-  db = client.db();
-// --------------
+// // --------------
+// var db;
+// var mongodb = require('mongodb');
+// var MongoClient = mongodb.MongoClient;
+//
+// mongodb.MongoClient.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/periodic-table', function (err, client) {
+//   if (err) {
+//     console.log(err);
+//     process.exit(1);
+//   }
+//
+//   db = client.db();
+// // --------------
 
 
 
@@ -33,7 +33,7 @@ app.use(bodyParser.json());
 
 // ***** mongod ******
 // PORT NUMBER: 27017
-// mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/periodic-table')
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/periodic-table')
 
 // let db = mongoose.connection
 
