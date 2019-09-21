@@ -5,6 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose')
 let elementsData = require('./PeriodicTableJSON.json')
+
+var bodyParser = require("body-parser");
 require('dotenv').config()
 
 
@@ -13,6 +15,7 @@ var routes = require('./routes/index');
 const router = express.Router();
 
 var app = express();
+app.use(bodyParser.json());
 
 // ***** mongod ******
 // PORT NUMBER: 27017
