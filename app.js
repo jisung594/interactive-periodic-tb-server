@@ -6,8 +6,8 @@ var logger = require('morgan');
 var mongoose = require('mongoose')
 let elementsData = require('./PeriodicTableJSON.json')
 
-var bodyParser = require("body-parser");
-require('dotenv').config()
+// var bodyParser = require("body-parser");
+// require('dotenv').config()
 
 // // --------------
 // var db;
