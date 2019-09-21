@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose')
 let elementsData = require('./PeriodicTableJSON.json')
-// require('dotenv').config()
+require('dotenv').config()
 
 
 
