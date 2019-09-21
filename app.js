@@ -29,7 +29,7 @@ var routes = require('./routes/index');
 const router = express.Router();
 
 var app = express();
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
 
 // ***** mongod ******
 // PORT NUMBER: 27017
