@@ -7,6 +7,7 @@ router.get('/', (req,res) => {
 
   Element.find()
     .then(data => res.json(data))
+    .catch(err => console.log(err))
 
 })
 
