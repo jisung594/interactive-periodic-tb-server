@@ -6,7 +6,8 @@ router.get('/api/elements', (req,res) => {
   console.log("I received a GET request");
 
   Element.find()
-    .then(data => res.json(data))
+    // .then(data => res.json(data))
+    .then(data => console.log(data))
 })
 
 
