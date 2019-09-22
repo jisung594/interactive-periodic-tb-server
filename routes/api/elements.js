@@ -8,9 +8,9 @@ var mongoose = require('mongoose')
 router.get('/', (req,res) => {
   console.log("I received a GET request");
 
-  Element.find()
+  Element.find(req.query)
     .then(data => res.json(data))
-    .catch(err => console.log(err))
+    .catch(error)
 
   // mongoose.connect(process.env.MONGODB_URI)
   //
