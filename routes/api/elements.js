@@ -9,7 +9,7 @@ router.get('/', (req,res) => {
 
   Element.find()
     .then(data => res.json(data))
-    .catch(error => error.message)
+    .catch(error => console.log(error.message))
 
   // mongoose.connect(process.env.MONGODB_URI)
   //
