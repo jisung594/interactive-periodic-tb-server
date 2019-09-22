@@ -21,25 +21,6 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/periodic-
 
 let db = mongoose.connection
 
-// router.get('/api/elements', (req,res) => {
-//   console.log("I received a GET request");
-//
-//   // Element.find({})
-//   //   .then(data => res.json(data))
-//   //   // .then(data => res.json(data))
-//
-//   // db.collection('elements').find({}, function(err, data){
-//   //   // console.log("Getting data from db")
-//   //   // console.log(data)
-//   //   res.json(data)
-//   // })
-//
-//   // elementsData.find((err, data) => {
-//   //   if (err) return res.json({ success: false, error: err });
-//   //   return res.json({ success: true, data: data });
-//   // });
-// })
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
