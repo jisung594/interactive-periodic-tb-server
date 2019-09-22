@@ -4,6 +4,21 @@ let Element = require('../../models/element.js')
 
 var mongoose = require('mongoose')
 
+router.get('/api/elements', async (req, res) => {
+    try {
+        const elements = await Element.find({});
+
+        return res.json({
+            elements
+        });
+    } catch (error) {
+        return res.status(500).json({
+            message: 'Internal Server error'
+        });
+    }
+});
+
+
 
 // router.get('/', (req,res) => {
 //   console.log("I received a GET request");
@@ -20,20 +35,6 @@ var mongoose = require('mongoose')
 //
 // })
 
-
-router.get('/', async (req, res) => {
-    try {
-        const elements = await Element.find({});
-
-        return res.json({
-            elements
-        });
-    } catch (error) {
-        return res.status(500).json({
-            message: 'Internal Server error'
-        });
-    }     
-});
 
 
 module.exports = router;
