@@ -30,7 +30,7 @@ app.get('/api/elements', (req,res) => {
   //   res.send(elements)
   // })
   let elements = Element.find()
-  res.json(elements)
+  res.send(elements)
 })
 // ----------------------
 
