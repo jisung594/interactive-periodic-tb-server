@@ -10,13 +10,6 @@ router.get('/', (req,res,error) => {
   Element.find()
     .then(data => res.json(data))
     .catch(console.log(error))
-
-  // mongoose.connect(process.env.MONGODB_URI)
-  //
-  // let db = mongoose.connection
-  // db.elements.find()
-  //   .then(data => res.json(data))
-
 })
 
 module.exports = router;

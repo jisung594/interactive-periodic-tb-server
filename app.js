@@ -5,19 +5,18 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose')
 let elementsData = require('./PeriodicTableJSON.json')
-require('dotenv').config();
+// require('dotenv').config();
 
 
 var routes = require('./routes/index');
 const router = express.Router();
 
 var app = express();
-// app.use(bodyParser.json());
 
 // ***** mongod ******
 // PORT NUMBER: 27017
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true })
-// mongoose.connect(process.env.MONGOLAB_URI  || 'mongodb://localhost:27017/periodic-table')
+// mongoose.connect('mongodb://localhost:27017/periodic-table')
 
 let db = mongoose.connection
 
