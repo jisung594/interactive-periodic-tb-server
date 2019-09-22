@@ -59,7 +59,7 @@ app.get('/api/elements', (req,res,error) => {
   console.log("I received a GET request");
 
   Element.find()
-    .then(data => res.json(data))
+    .then(data => res.send(data))
     .catch(console.log(error))
 })
 
