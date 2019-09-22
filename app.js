@@ -26,7 +26,7 @@ app.get('/api/elements', (req,res) => {
   Element.find((err, elements) => {
     if (err) res.send(err)
 
-    res.json(elements)
+    res.send(elements)
   })
 })
 
