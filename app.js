@@ -16,7 +16,7 @@ var app = express();
 
 // ***** mongod ******
 // PORT NUMBER: 27017
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/periodic-table')
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/periodic-table', { useNewUrlParser: true })
 // mongoose.connect(process.env.MONGOLAB_URI  || 'mongodb://localhost:27017/periodic-table')
 
 let db = mongoose.connection
@@ -53,13 +53,13 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'));
-
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-  });
-}
+// if (process.env.NODE_ENV === 'production') {
+//   app.use(express.static('client/build'));
+//
+//   app.get('*', (req, res) => {
+//     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+//   });
+// }
 
 
 // PORT
