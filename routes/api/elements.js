@@ -4,34 +4,20 @@ let Element = require('../../models/element.js')
 
 var mongoose = require('mongoose')
 
-router.get('/', async (req, res) => {
-    try {
-        const elements = await Element.find({});
+router.get('/', (req,res) => {
+  console.log("I received a GET request");
 
-        return elements
-    } catch (error) {
-        return res.status(500).json({
-            message: 'Internal Server error'
-        });
-    }
-});
+  Element.find()
+    .then(data => res.json(data))
+    .catch(error)
 
+  // mongoose.connect(process.env.MONGODB_URI)
+  //
+  // let db = mongoose.connection
+  // db.elements.find()
+  //   .then(data => res.json(data))
 
-
-// router.get('/', (req,res) => {
-//   console.log("I received a GET request");
-//
-//   Element.find()
-//     .then(data => res.json(data))
-//     .catch(error)
-//
-//   // mongoose.connect(process.env.MONGODB_URI)
-//   //
-//   // let db = mongoose.connection
-//   // db.elements.find()
-//   //   .then(data => res.json(data))
-//
-// })
+})
 
 
 
