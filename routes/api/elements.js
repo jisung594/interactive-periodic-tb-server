@@ -4,6 +4,7 @@ let Element = require('../../models/element.js')
 
 var mongoose = require('mongoose')
 
+
 router.get('/', (req,res) => {
   console.log("I received a GET request");
 
@@ -12,9 +13,9 @@ router.get('/', (req,res) => {
   //   .catch(error)
 
   mongoose.connect(process.env.MONGODB_URI)
-    .then(data => res.send(data)
 
-  // let db = mongoose.connection
+  let db = mongoose.connection
+  console.log(db);
   // db.elements.find()
   //   .then(data => res.json(data))
 
