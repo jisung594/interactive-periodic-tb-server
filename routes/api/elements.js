@@ -15,9 +15,8 @@ router.get('/', (req,res) => {
   mongoose.connect(process.env.MONGODB_URI)
 
   let db = mongoose.connection
-  console.log(db);
-  // db.elements.find()
-  //   .then(data => res.json(data))
+  db["elements"]find()
+    .then(data => res.json(data))
 
 })
 
