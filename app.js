@@ -49,7 +49,20 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/', routes);
-app.get('/api/elements', require('./routes/api/elements'));
+app.use('/api/elements', require('./routes/api/elements'));
+
+
+let Element = require('../../models/element.js')
+
+
+app.get('/api/elements', (req,res,error) => {
+  console.log("I received a GET request");
+
+  Element.find()
+    .then(data => res.json(data))
+    .catch(console.log(error))
+})
+
 
 
 // catch 404 and forward to error handler
