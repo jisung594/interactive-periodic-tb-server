@@ -11,7 +11,7 @@ let elementsData = require('./PeriodicTableJSON.json')
 
 // // --------------
 // var db;
-var mongodb = require('mongodb');
+// var mongodb = require('mongodb');
 // var MongoClient = mongodb.MongoClient;
 //
 // mongodb.MongoClient.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/periodic-table', function (err, client) {
@@ -36,7 +36,7 @@ var app = express();
 // mongoose.connect(process.env.MONGODB_URI  || 'mongodb://localhost:27017/periodic-table')
 mongoose.connect(process.env.MONGOLAB_URI  || 'mongodb://localhost:27017/periodic-table')
 
-// let db = mongoose.connection
+let db = mongoose.connection
 
 // router.get('/api/elements', (req,res) => {
 //   console.log("I received a GET request");
