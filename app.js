@@ -9,9 +9,7 @@ let elementsData = require('./PeriodicTableJSON.json')
 
 
 var routes = require('./routes/index');
-var elementsRoutes = require('./routes/api/elements')
 const router = express.Router();
-let Element = require('./models/element.js')
 
 var app = express();
 // app.use(bodyParser.json());
@@ -42,11 +40,6 @@ let db = mongoose.connection
 //   // });
 // })
 
-app.get('/api/elements', (req,res) => {
-  Element.find()
-    .then(data => res.json(data))
-})
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -60,7 +53,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/', routes);
-app.use('/api/elements', elementsRoutes);
+app.use('/api/elements', require('./routes/api/elements'));
 
 
 // catch 404 and forward to error handler
