@@ -22,6 +22,21 @@ let db = mongoose.connection
 
 
 
+// ----------------------
+let Element = require('../../models/element.js')
+
+app.get('/api/elements', (req,res) => {
+  // Element.find((elements) => {
+  //   res.send(elements)
+  // })
+  let elements = Element.find()
+  res.json(elements)
+})
+// ----------------------
+
+
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
