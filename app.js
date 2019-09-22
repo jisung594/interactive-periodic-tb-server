@@ -23,9 +23,9 @@ let db = mongoose.connection
 
 
 // ----------------------
-let Element = require('./models/element.js')
 
 app.get('/api/elements', (req,res) => {
+  let Element = require('./models/element.js')
   // Element.find((elements) => {
   //   res.send(elements)
   // })
