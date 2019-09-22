@@ -58,6 +58,7 @@ let db = mongoose.connection
 //   // });
 // })
 
+app.get('/api/elements', elementsRoutes)
 
 
 // view engine setup
@@ -71,10 +72,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-
 app.use('/', routes);
-app.get('/api/elements', elementsRoutes);
-
+app.use('/api/elements', elementsRoutes);
 
 
 // catch 404 and forward to error handler
