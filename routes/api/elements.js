@@ -8,15 +8,15 @@ var mongoose = require('mongoose')
 router.get('/', (req,res) => {
   console.log("I received a GET request");
 
-  // Element.find()
-  //   .then(data => res.json(data))
-  //   .catch(error)
-
-  mongoose.connect(process.env.MONGODB_URI)
-
-  let db = mongoose.connection
-  db["elements"].find()
+  Element.find()
     .then(data => res.json(data))
+    .catch(error)
+
+  // mongoose.connect(process.env.MONGODB_URI)
+  //
+  // let db = mongoose.connection
+  // db.elements.find()
+  //   .then(data => res.json(data))
 
 })
 
