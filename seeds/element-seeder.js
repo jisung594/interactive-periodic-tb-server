@@ -3,7 +3,7 @@ let Element = require('../models/element.js')
 let mongoose = require('mongoose');
 
 // mongoose.connect('mongodb://localhost:27017/periodic-table')
-mongoose.connect('mongodb://jisung594:Korea123$@ds123399.mlab.com:23399/heroku_v1hrw9h7')
+mongoose.connect('mongodb://jisung594:Korea123$@ds123399.mlab.com:23399/heroku_v1hrw9h7', { useNewUrlParser: true })
 let db = mongoose.connection
 db.collection('elements').remove({})
 
