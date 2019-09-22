@@ -26,6 +26,7 @@ let elementsData = require('./PeriodicTableJSON.json')
 
 
 var routes = require('./routes/index');
+var elementsRoutes = require('./routes/api/elements')
 const router = express.Router();
 
 var app = express();
@@ -69,9 +70,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+
 app.use('/', routes);
-// app.use('/users', usersRouter);
-app.use('/api/elements', require('./routes/api/elements'));
+app.use('/api/elements', elementsRoutes);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
