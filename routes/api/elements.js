@@ -10,7 +10,7 @@ router.get('/', (req,res) => {
 
   Element.find()
     .then(data => res.json(data))
-    .catch(err => res.status(422).json(err))
+    .catch(err => console.log(err))
 
   // mongoose.connect(process.env.MONGODB_URI)
   //
