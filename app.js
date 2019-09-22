@@ -20,11 +20,11 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true })
 
 let db = mongoose.connection
 
-// let Element = require('../../models/element.js')
-// Element.find()
+let Element = require('../../models/element.js')
 
 app.get('/api/elements', (req,res) => {
-  res.send(db.elements)
+  res.send(Element.find())
+  // res.send(db.elements)
 })
 
 
