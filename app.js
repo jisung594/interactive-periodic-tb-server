@@ -22,17 +22,17 @@ let db = mongoose.connection
 
 
 
-// ----------------------
-
-app.get('/api/elements', (req,res) => {
-  let Element = require('./models/element.js')
-  // Element.find((elements) => {
-  //   res.send(elements)
-  // })
-  let elements = Element.find()
-  res.send(elements)
-})
-// ----------------------
+// // ----------------------
+// let Element = require('./models/element.js')
+//
+// app.get('/api/elements', (req,res) => {
+//   // Element.find((elements) => {
+//   //   res.send(elements)
+//   // })
+//   let elements = Element.find()
+//   res.send(elements)
+// })
+// // ----------------------
 
 
 
