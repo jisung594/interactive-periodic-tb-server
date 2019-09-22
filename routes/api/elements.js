@@ -4,12 +4,12 @@ let Element = require('../../models/element.js')
 
 var mongoose = require('mongoose')
 
-router.get('/', (req,res) => {
+router.get('/', (req,res,error) => {
   console.log("I received a GET request");
 
   Element.find()
     .then(data => res.json(data))
-    .catch(error => console.log(error.message))
+    .catch(console.log(error.message))
 
   // mongoose.connect(process.env.MONGODB_URI)
   //
