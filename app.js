@@ -23,7 +23,7 @@ let db = mongoose.connection
 
 
 // ----------------------
-let Element = require('../../models/element.js')
+let Element = require('./models/element.js')
 
 app.get('/api/elements', (req,res) => {
   // Element.find((elements) => {
