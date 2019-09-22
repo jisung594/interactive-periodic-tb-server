@@ -20,12 +20,9 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true })
 
 let db = mongoose.connection
 
-let Element = require('/models/element.js')
-
-app.get('/api/elements', (req,res) => {
-  res.send(Element.find())
-  // res.send(db.elements)
-})
+// app.get('/api/elements', (req,res) => {
+//   res.send(db.elements)
+// })
 
 
 // view engine setup
