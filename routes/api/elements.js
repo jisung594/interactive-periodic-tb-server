@@ -12,10 +12,11 @@ router.get('/', (req,res) => {
   //   .catch(error)
 
   mongoose.connect(process.env.MONGODB_URI)
+    .then(data => res.send(data)
 
-  let db = mongoose.connection
-  db.elements.find()
-    .then(data => res.json(data))
+  // let db = mongoose.connection
+  // db.elements.find()
+  //   .then(data => res.json(data))
 
 })
 
