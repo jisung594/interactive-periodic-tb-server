@@ -16,8 +16,4 @@ const elementSchema = new mongoose.Schema({
   named_by: String
 })
 
-// import JSON file?
-// for loop to iterate over array and create elements
-
-
 module.exports = mongoose.model("Element", elementSchema);

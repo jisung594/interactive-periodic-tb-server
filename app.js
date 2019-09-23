@@ -34,7 +34,8 @@ let db = mongoose.connection
 // })
 // // ----------------------
 
-
+app.use('/', routes);
+app.use('/api/elements', require('./routes/api/elements'));
 
 
 // view engine setup
@@ -54,10 +55,6 @@ app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Headers', 'Content-Type');
   next();
 })
-
-
-app.use('/', routes);
-app.use('/api/elements', require('./routes/api/elements'));
 
 
 // catch 404 and forward to error handler
