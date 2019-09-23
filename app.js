@@ -57,7 +57,7 @@ app.use(function(req, res, next) {
 
 
 app.use('/', routes);
-app.get('/api/elements', require('./routes/api/elements'));
+app.use('/api/elements', require('./routes/api/elements'));
 
 
 // catch 404 and forward to error handler
