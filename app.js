@@ -11,7 +11,20 @@ require('dotenv').config();
 var routes = require('./routes/index');
 const router = express.Router();
 
+
 var app = express();
+
+
+var cors = require('cors');
+app.use(cors());
+
+app.use(function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', "*");
+  res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+})
+
 
 // ***** mongod ******
 // PORT NUMBER: 27017
