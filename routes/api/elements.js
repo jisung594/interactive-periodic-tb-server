@@ -7,7 +7,7 @@ router.get('/', (req,res,error) => {
   console.log("I received a GET request");
 
   Element.find()
-    .then(data => res.send(data))
+    .then(data => res.json(data))
     .catch(console.log(error))
 })
 
